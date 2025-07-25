@@ -1,33 +1,28 @@
-import '../css/normalize.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../css/styles.css';
-import 'bootstrap';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import 'animate.css';
+import "../css/normalize.css";
+import "../css/styles.css";
+import {createDropdownElement} from "../js/dropdown.js"
+import {moveImagesInsideContainer, moveSildesToRight, setCurrentSlideNumberValue, generateNavigationDots} from "./imageCarousel.js";
 
+const btn = document.querySelector("button");
+const container = document.querySelector('div.dropdown')
+const arrowLeft = document.querySelector('div.arrow.left');
+const arrowRight = document.querySelector('div.arrow.right');
+const imagesContainer = document.querySelector('div.images-container');
+const navigationDotsContainer = document.querySelector('div.navigation-dots-container');
 
-export const initializeCommon = () => {
-    
-    AOS.init({
-        duration: 800,
-        offset: 100,
-        once: true,
-        easing: 'ease-in-out'
-    });
+btn.addEventListener("click", () => {
+    btn.classList.toggle("clicked");
+    createDropdownElement(["pizza", "apple", "burger", "water", "bread", "juice", "beans"], container);
+});
 
-   
-    const progressBar = document.querySelector('.scroll-progress-bar');
-    if (progressBar) {
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-    }
-};
+generateNavigationDots(imagesContainer, navigationDotsContainer);
+setCurrentSlideNumberValue(imagesContainer);
+moveSildesToRight(imagesContainer, 370);
 
+arrowRight.addEventListener("click", () => {
+    moveImagesInsideContainer("right", imagesContainer, 370);
+});
 
-document.addEventListener('DOMContentLoaded', initializeCommon);
+arrowLeft.addEventListener("click", () => {
+    moveImagesInsideContainer("left", imagesContainer, 370);
+})

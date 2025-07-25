@@ -1,7 +1,7 @@
 {
-  "name": "silvas-digital",
+  "name": "template/test",
   "version": "1.0.0",
-  "description": "official website of Silvas Digital",
+  "description": "template-test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Silva-Mo/silvasDigitalWebsite"
+    "url": "git+https://github.com/Silva-Mo/silvasDigitalWebsite.git"
   },
   "author": "Silva-Mo",
   "license": "MIT",
@@ -32,12 +32,5 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^5.10.0"
-  },
-  "dependencies": {
-    "animate.css": "^4.1.1",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.3.6",
-    "bootstrap-icons": "^1.13.1",
-    "date-fns": "^4.1.0"
   }
 }
