@@ -1,5 +1,6 @@
 import "../css/normalize.css";
 import "../css/styles.css";
+import formValidation from "../js/formValidation.js"
 import {createDropdownElement} from "../js/dropdown.js"
 import {moveImagesInsideContainer, moveSildesToRight, setCurrentSlideNumberValue, generateNavigationDots} from "./imageCarousel.js";
 
