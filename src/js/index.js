@@ -3,15 +3,16 @@ import "../css/styles.css";
 import {createDropdownElement} from "../js/dropdown.js"
 import {moveImagesInsideContainer, moveSildesToRight, setCurrentSlideNumberValue, generateNavigationDots} from "./imageCarousel.js";
 
-const btn = document.querySelector("button");
+
+const btnOfDropdown = document.querySelector(".dropdown-menu");
 const container = document.querySelector('div.dropdown')
 const arrowLeft = document.querySelector('div.arrow.left');
 const arrowRight = document.querySelector('div.arrow.right');
 const imagesContainer = document.querySelector('div.images-container');
 const navigationDotsContainer = document.querySelector('div.navigation-dots-container');
 
-btn.addEventListener("click", () => {
-    btn.classList.toggle("clicked");
+btnOfDropdown.addEventListener("click", () => {
+    btnOfDropdown.classList.toggle("clicked");
     createDropdownElement(["pizza", "apple", "burger", "water", "bread", "juice", "beans"], container);
 });
 

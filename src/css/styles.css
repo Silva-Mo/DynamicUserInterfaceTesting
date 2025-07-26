@@ -148,7 +148,27 @@ div.dropdown > *:hover{
     display: flex;
 }
 
+/* Form validation CSS */
 
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+input:valid, select:valid{
+    outline: 2px solid green;
+}
+
+input:invalid, select:invalid{
+    outline: 2px solid red;
+}
+
+span {
+    color: red;
+}
 
 
 
